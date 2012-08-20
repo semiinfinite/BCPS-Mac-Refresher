@@ -3,6 +3,7 @@
 import easygui as eg
 import dateutil.parser as dparser
 import os, sys, time, getpass
+import shutil, errno
 
 def startWizard():
     msg = "Welcome to the BCPS Mac Refresher. This application will walk you through the creation of a package that can be used to modify a user back to specific preferences."
@@ -96,7 +97,18 @@ def setPowerMangement():
 
     return times
 
+def copyAnything(src, dst):
+    try:
+        shutil.copytree(src, dst)
+    except OSError as exc:
+        if exc.errno == errno.ENOTDIR:
+            shutil.copy(src, dst)
+        else:
+            raise
+
 def createPackage(selected_user, move_yes_no, homepage, powermanagement_times):
+    copyAnything("BCPS_Mac_Refresher-1.0.pkg/", "/Users/%s/Desktop/BCPS_Mac_Refresher_%s.pkg/" % (getpass.getuser(), selected_user))
+
     postflight = "/Users/%s/Desktop/BCPS_Mac_Refresher_%s.pkg/Contents/Resources/postflight" % (getpass.getuser(), selected_user)
     dir = os.path.dirname(postflight)
 
