@@ -1,0 +1,7 @@
+#!/bin/bash
+
+user = mjm
+move_yes_no = 0
+homepage = http://beep.browardschools.com
+startup = "7:00"
+shutdown = "17:00"
