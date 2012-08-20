@@ -1,6 +1,6 @@
-# BCPS MAC Refresher
+# BCPS Mac Refresher
 ## Overview
-The **BCPS MAC Refresher** is an application designed to clean up a Apple workstation that has built up some rot over time, specifically student workstations.
+The **BCPS Mac Refresher** is an application designed to clean up a Apple workstation that has built up some rot over time, specifically student workstations.
 
 ### Features
 #### Select User to Modify
